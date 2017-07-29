@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -55,6 +56,7 @@ public class GameActivity extends AppCompatActivity {
                         btn1.setText("O");
                     }
                 }
+                endGame();
             }
         });
 
@@ -70,6 +72,7 @@ public class GameActivity extends AppCompatActivity {
                         btn2.setText("O");
                     }
                 }
+                endGame();
             }
         });
 
@@ -85,6 +88,7 @@ public class GameActivity extends AppCompatActivity {
                         btn3.setText("O");
                     }
                 }
+                endGame();
             }
         });
 
@@ -100,6 +104,7 @@ public class GameActivity extends AppCompatActivity {
                         btn4.setText("O");
                     }
                 }
+                endGame();
             }
         });
 
@@ -115,6 +120,7 @@ public class GameActivity extends AppCompatActivity {
                         btn5.setText("O");
                     }
                 }
+                endGame();
             }
         });
 
@@ -130,6 +136,7 @@ public class GameActivity extends AppCompatActivity {
                         btn6.setText("O");
                     }
                 }
+                endGame();
             }
         });
 
@@ -145,6 +152,7 @@ public class GameActivity extends AppCompatActivity {
                         btn7.setText("O");
                     }
                 }
+                endGame();
             }
         });
 
@@ -160,6 +168,7 @@ public class GameActivity extends AppCompatActivity {
                         btn8.setText("O");
                     }
                 }
+                endGame();
             }
         });
 
@@ -175,9 +184,78 @@ public class GameActivity extends AppCompatActivity {
                         btn9.setText("O");
                     }
                 }
+                endGame();
             }
         });
     }
 
+    public void endGame() {
+        String a, b, c, d, e, f, g, h, i;
+
+        boolean end = false;
+
+        a = btn1.getText().toString();
+        b = btn2.getText().toString();
+        c = btn3.getText().toString();
+        d = btn4.getText().toString();
+        e = btn5.getText().toString();
+        f = btn6.getText().toString();
+        g = btn7.getText().toString();
+        h = btn8.getText().toString();
+        i = btn9.getText().toString();
+
+        if (a.equals("X") && b.equals("X") && c.equals("X")) {
+            Toast.makeText(GameActivity.this, "Winner Player X!", Toast.LENGTH_SHORT).show();
+            end = true;
+        }
+
+        if (d.equals("X") && e.equals("X") && f.equals("X")) {
+            Toast.makeText(GameActivity.this, "Winner Player X!", Toast.LENGTH_SHORT).show();
+            end = true;
+        }
+
+        if (g.equals("X") && h.equals("X") && i.equals("X")) {
+            Toast.makeText(GameActivity.this, "Winner Player X!", Toast.LENGTH_SHORT).show();
+            end = true;
+        }
+
+        if (a.equals("X") && d.equals("X") && g.equals("X")) {
+            Toast.makeText(GameActivity.this, "Winner Player X!", Toast.LENGTH_SHORT).show();
+            end = true;
+        }
+
+        if (b.equals("X") && e.equals("X") && h.equals("X")) {
+            Toast.makeText(GameActivity.this, "Winner Player X!", Toast.LENGTH_SHORT).show();
+            end = true;
+        }
+
+        if (c.equals("X") && f.equals("X") && i.equals("X")) {
+            Toast.makeText(GameActivity.this, "Winner Player X!", Toast.LENGTH_SHORT).show();
+            end = true;
+        }
+
+        if (a.equals("X") && e.equals("X") && i.equals("X")) {
+            Toast.makeText(GameActivity.this, "Winner Player X!", Toast.LENGTH_SHORT).show();
+            end = true;
+        }
+
+        if (c.equals("X") && e.equals("X") && g.equals("X")) {
+            Toast.makeText(GameActivity.this, "Winner Player X!", Toast.LENGTH_SHORT).show();
+            end = true;
+        }
+
+        if(end){
+            btn1.setEnabled(false);
+            btn2.setEnabled(false);
+            btn3.setEnabled(false);
+            btn4.setEnabled(false);
+            btn5.setEnabled(false);
+            btn6.setEnabled(false);
+            btn7.setEnabled(false);
+            btn8.setEnabled(false);
+            btn9.setEnabled(false);
+
+        }
+    }
 
 }
