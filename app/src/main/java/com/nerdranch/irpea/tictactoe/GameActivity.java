@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class GameActivity extends AppCompatActivity {
@@ -18,8 +19,12 @@ public class GameActivity extends AppCompatActivity {
     private Button btn8;
     private Button btn9;
     private Button btnRestart;
+    private TextView tvXScore;
+    private TextView tvOScore;
 
     private int turn = 1;
+    private int xScore = 0;
+    private int oScore = 0;
     private boolean end = false;
 
     @Override
@@ -43,6 +48,8 @@ public class GameActivity extends AppCompatActivity {
         btn8 = (Button) findViewById(R.id.btn8);
         btn9 = (Button) findViewById(R.id.btn9);
         btnRestart = (Button) findViewById(R.id.btnRestart);
+        tvXScore = (TextView) findViewById(R.id.tvXScore);
+        tvOScore = (TextView) findViewById(R.id.tvOScore);
     }
 
     private void setListeners() {
@@ -230,81 +237,113 @@ public class GameActivity extends AppCompatActivity {
         if (a.equals("X") && b.equals("X") && c.equals("X")) {
             Toast.makeText(GameActivity.this, "Winner Player X!", Toast.LENGTH_SHORT).show();
             end = true;
+            xScore++;
+            tvXScore.setText(xScore + "");
         }
 
         if (d.equals("X") && e.equals("X") && f.equals("X")) {
             Toast.makeText(GameActivity.this, "Winner Player X!", Toast.LENGTH_SHORT).show();
             end = true;
+            xScore++;
+            tvXScore.setText(xScore + "");
         }
 
         if (g.equals("X") && h.equals("X") && i.equals("X")) {
             Toast.makeText(GameActivity.this, "Winner Player X!", Toast.LENGTH_SHORT).show();
             end = true;
+            xScore++;
+            tvXScore.setText(xScore + "");
         }
 
         if (a.equals("X") && d.equals("X") && g.equals("X")) {
             Toast.makeText(GameActivity.this, "Winner Player X!", Toast.LENGTH_SHORT).show();
             end = true;
+            xScore++;
+            tvXScore.setText(xScore + "");
         }
 
         if (b.equals("X") && e.equals("X") && h.equals("X")) {
             Toast.makeText(GameActivity.this, "Winner Player X!", Toast.LENGTH_SHORT).show();
             end = true;
+            xScore++;
+            tvXScore.setText(xScore + "");
         }
 
         if (c.equals("X") && f.equals("X") && i.equals("X")) {
             Toast.makeText(GameActivity.this, "Winner Player X!", Toast.LENGTH_SHORT).show();
             end = true;
+            xScore++;
+            tvXScore.setText(xScore + "");
         }
 
         if (a.equals("X") && e.equals("X") && i.equals("X")) {
             Toast.makeText(GameActivity.this, "Winner Player X!", Toast.LENGTH_SHORT).show();
             end = true;
+            xScore++;
+            tvXScore.setText(xScore + "");
         }
 
         if (c.equals("X") && e.equals("X") && g.equals("X")) {
             Toast.makeText(GameActivity.this, "Winner Player X!", Toast.LENGTH_SHORT).show();
             end = true;
+            xScore++;
+            tvXScore.setText(xScore + "");
         }
 
         if (a.equals("O") && b.equals("O") && c.equals("O")) {
             Toast.makeText(GameActivity.this, "Winner Player O!", Toast.LENGTH_SHORT).show();
             end = true;
+            oScore++;
+            tvOScore.setText(oScore + "");
         }
 
         if (d.equals("O") && e.equals("O") && f.equals("O")) {
             Toast.makeText(GameActivity.this, "Winner Player O!", Toast.LENGTH_SHORT).show();
             end = true;
+            oScore++;
+            tvOScore.setText(oScore + "");
         }
 
         if (g.equals("O") && h.equals("O") && i.equals("O")) {
             Toast.makeText(GameActivity.this, "Winner Player O!", Toast.LENGTH_SHORT).show();
             end = true;
+            oScore++;
+            tvOScore.setText(oScore + "");
         }
 
         if (a.equals("O") && d.equals("O") && g.equals("O")) {
             Toast.makeText(GameActivity.this, "Winner Player O!", Toast.LENGTH_SHORT).show();
             end = true;
+            oScore++;
+            tvOScore.setText(oScore + "");
         }
 
         if (b.equals("O") && e.equals("O") && h.equals("O")) {
             Toast.makeText(GameActivity.this, "Winner Player O!", Toast.LENGTH_SHORT).show();
             end = true;
+            oScore++;
+            tvOScore.setText(oScore + "");
         }
 
         if (c.equals("O") && f.equals("O") && i.equals("O")) {
             Toast.makeText(GameActivity.this, "Winner Player O!", Toast.LENGTH_SHORT).show();
             end = true;
+            oScore++;
+            tvOScore.setText(oScore + "");
         }
 
         if (a.equals("O") && e.equals("O") && i.equals("O")) {
             Toast.makeText(GameActivity.this, "Winner Player O!", Toast.LENGTH_SHORT).show();
             end = true;
+            oScore++;
+            tvOScore.setText(oScore + "");
         }
 
         if (c.equals("O") && e.equals("O") && g.equals("O")) {
             Toast.makeText(GameActivity.this, "Winner Player O!", Toast.LENGTH_SHORT).show();
             end = true;
+            oScore++;
+            tvOScore.setText(oScore + "");
         }
         enableButtons();
     }
