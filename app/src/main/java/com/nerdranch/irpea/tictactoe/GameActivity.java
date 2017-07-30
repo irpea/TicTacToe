@@ -17,9 +17,10 @@ public class GameActivity extends AppCompatActivity {
     private Button btn7;
     private Button btn8;
     private Button btn9;
+    private Button btnRestart;
 
-    int turn = 1;
-
+    private int turn = 1;
+    private boolean end = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,7 @@ public class GameActivity extends AppCompatActivity {
         btn7 = (Button) findViewById(R.id.btn7);
         btn8 = (Button) findViewById(R.id.btn8);
         btn9 = (Button) findViewById(R.id.btn9);
+        btnRestart = (Button) findViewById(R.id.btnRestart);
     }
 
     private void setListeners() {
@@ -187,12 +189,28 @@ public class GameActivity extends AppCompatActivity {
                 endGame();
             }
         });
+
+        btnRestart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                end = false;
+                btn1.setText("");
+                btn2.setText("");
+                btn3.setText("");
+                btn4.setText("");
+                btn5.setText("");
+                btn6.setText("");
+                btn7.setText("");
+                btn8.setText("");
+                btn9.setText("");
+                turn = 1;
+                enableButtons();
+            }
+        });
     }
 
     public void endGame() {
         String a, b, c, d, e, f, g, h, i;
-
-        boolean end = false;
 
         a = btn1.getText().toString();
         b = btn2.getText().toString();
@@ -203,6 +221,11 @@ public class GameActivity extends AppCompatActivity {
         g = btn7.getText().toString();
         h = btn8.getText().toString();
         i = btn9.getText().toString();
+
+        if (a != "" && b != "" && c != "" && d != "" && e != "" && f != "" && g != "" && h != "" && i != "") {
+            Toast.makeText(GameActivity.this, "Tie!", Toast.LENGTH_SHORT).show();
+            end = true;
+        }
 
         if (a.equals("X") && b.equals("X") && c.equals("X")) {
             Toast.makeText(GameActivity.this, "Winner Player X!", Toast.LENGTH_SHORT).show();
@@ -244,7 +267,50 @@ public class GameActivity extends AppCompatActivity {
             end = true;
         }
 
-        if(end){
+        if (a.equals("O") && b.equals("O") && c.equals("O")) {
+            Toast.makeText(GameActivity.this, "Winner Player O!", Toast.LENGTH_SHORT).show();
+            end = true;
+        }
+
+        if (d.equals("O") && e.equals("O") && f.equals("O")) {
+            Toast.makeText(GameActivity.this, "Winner Player O!", Toast.LENGTH_SHORT).show();
+            end = true;
+        }
+
+        if (g.equals("O") && h.equals("O") && i.equals("O")) {
+            Toast.makeText(GameActivity.this, "Winner Player O!", Toast.LENGTH_SHORT).show();
+            end = true;
+        }
+
+        if (a.equals("O") && d.equals("O") && g.equals("O")) {
+            Toast.makeText(GameActivity.this, "Winner Player O!", Toast.LENGTH_SHORT).show();
+            end = true;
+        }
+
+        if (b.equals("O") && e.equals("O") && h.equals("O")) {
+            Toast.makeText(GameActivity.this, "Winner Player O!", Toast.LENGTH_SHORT).show();
+            end = true;
+        }
+
+        if (c.equals("O") && f.equals("O") && i.equals("O")) {
+            Toast.makeText(GameActivity.this, "Winner Player O!", Toast.LENGTH_SHORT).show();
+            end = true;
+        }
+
+        if (a.equals("O") && e.equals("O") && i.equals("O")) {
+            Toast.makeText(GameActivity.this, "Winner Player O!", Toast.LENGTH_SHORT).show();
+            end = true;
+        }
+
+        if (c.equals("O") && e.equals("O") && g.equals("O")) {
+            Toast.makeText(GameActivity.this, "Winner Player O!", Toast.LENGTH_SHORT).show();
+            end = true;
+        }
+        enableButtons();
+    }
+
+    private void enableButtons() {
+        if (end) {
             btn1.setEnabled(false);
             btn2.setEnabled(false);
             btn3.setEnabled(false);
@@ -254,8 +320,16 @@ public class GameActivity extends AppCompatActivity {
             btn7.setEnabled(false);
             btn8.setEnabled(false);
             btn9.setEnabled(false);
-
+        } else {
+            btn1.setEnabled(true);
+            btn2.setEnabled(true);
+            btn3.setEnabled(true);
+            btn4.setEnabled(true);
+            btn5.setEnabled(true);
+            btn6.setEnabled(true);
+            btn7.setEnabled(true);
+            btn8.setEnabled(true);
+            btn9.setEnabled(true);
         }
     }
-
 }
