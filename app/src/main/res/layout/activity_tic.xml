@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/back"
-    tools:context="com.nerdranch.irpea.tictactoe.GameActivity"
+    tools:context="com.nerdranch.irpea.tictactoe.TicActivity"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="81dp">
 

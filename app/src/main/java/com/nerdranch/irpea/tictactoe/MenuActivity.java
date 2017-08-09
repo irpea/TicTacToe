@@ -31,7 +31,15 @@ public class MenuActivity extends AppCompatActivity{
         btnTic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(this, );
+                Intent intent = new Intent(getApplicationContext(), TicActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnMlin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
     }
