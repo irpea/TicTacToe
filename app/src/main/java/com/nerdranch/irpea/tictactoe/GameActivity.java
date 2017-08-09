@@ -34,7 +34,6 @@ public class GameActivity extends AppCompatActivity {
 
         initWidgets();
         setListeners();
-
     }
 
     private void initWidgets() {
@@ -280,7 +279,7 @@ public class GameActivity extends AppCompatActivity {
             Toast.makeText(GameActivity.this, "Winner Player X!", Toast.LENGTH_SHORT).show();
             end = true;
             xScore++;
-            tvXScore.setText(xScore + "");
+            tvXScore.setText(xScore +  "");
         }
 
         if (c.equals("X") && e.equals("X") && g.equals("X")) {
